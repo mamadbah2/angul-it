@@ -1,0 +1,39 @@
+<main>
+  <div>
+    <section id="card-header">
+      <p>Select all square with</p>
+      <h1>{{titre}}</h1>
+      <p>If there no click, please skip</p>
+    </section>
+    <section id="card-body">
+      <div
+        *ngFor="let i of image"
+        [ngClass]="{ 'selected' : i.isSelected }"
+        class="img{{i.numero}}"
+        (click)="toggleSelection(i.numero)"
+      >
+        <img src="./level-{{level}}/img{{i.numero}}.jpg" alt="captcha image">
+      </div>
+    </section>
+    <section id="card-footer">
+      <div>
+        <span (click)="goBack()">
+         <i class="fa-solid fa-arrow-left"></i>
+        </span>
+        <span>
+          <i class="fa-solid fa-headphones"></i>
+        </span>
+        <span>
+          <i class="fa-solid fa-circle-info"></i>
+        </span>
+
+
+      </div>
+      <div>
+        <button (click)="skip()" type="submit">
+          SKIP
+        </button>
+      </div>
+    </section>
+  </div>
+</main>
