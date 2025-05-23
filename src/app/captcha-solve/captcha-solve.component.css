@@ -18,6 +18,7 @@ main > div {
   height: 120px;
   overflow: hidden;
   background-color: silver;
+  position: relative;
 }
 
 #card-body {
@@ -81,9 +82,13 @@ main > div {
 
 #card-footer div input {
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 0.7em;
   padding: 2px 5px;
   max-width: 50%;
+}
+
+#card-footer div .failed {
+  border: 2px solid #da0802;
 }
 
 main > div {
@@ -102,3 +107,5 @@ main > div {
   box-sizing: border-box;
   border: 5px solid #0099ff;
 }
+
+

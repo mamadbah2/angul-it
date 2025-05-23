@@ -1,20 +1,25 @@
 <main>
   <div>
     <section id="card-header">
-      <p>(Solve math question and enter result below)</p>
+      <p>{{titre}}</p>
     </section>
     <section id="card-body">
       <div>
-        <img src="./level-3/img1.png" alt="captcha image">
+        <img ngSrc="./level-{{level}}/img1.jpg" height="120" width="300" priority  alt="captcha image">
       </div>
     </section>
     <section id="card-footer">
       <div>
-        <span>
+        <span (click)="goBack()">
          <i class="fa-solid fa-arrow-left"></i>
         </span>
-        <input type="text" placeholder="enter result">
-        <button type="submit">
+        <input
+          type="text"
+          placeholder="enter result"
+          [(ngModel)]="response"
+          [ngClass]="{ 'failed' : isResponseFailed }"
+        >
+        <button type="submit" (click)="checkCorrectResponse()">
           SUBMIT
         </button>
       </div>

@@ -6,7 +6,8 @@ import {flatMap} from 'rxjs';
   selector: 'app-captcha-level',
   imports: [
     NgForOf,
-    NgClass
+    NgClass,
+    NgOptimizedImage
   ],
   templateUrl: './captcha-level.component.html',
   styleUrl: './captcha-level.component.css'

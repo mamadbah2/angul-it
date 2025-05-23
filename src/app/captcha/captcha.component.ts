@@ -4,6 +4,7 @@ import {CaptchaStateService} from '../captcha-state.service';
 import {Subscription} from 'rxjs';
 import {NgIf} from '@angular/common';
 import {CaptchaSolveComponent} from '../captcha-solve/captcha-solve.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-captcha',
@@ -18,12 +19,12 @@ import {CaptchaSolveComponent} from '../captcha-solve/captcha-solve.component';
 export class CaptchaComponent {
   currentLevel :number = 0
   levelSubscription: Subscription | undefined;
-  allTitre: string[]= ["Emoji", "Fire", "Cat"]
+  allTitre: string[]= ["Emoji", "Fire", "Cat", "Solve math question and enter result below", "To continue, type the word you see in the picture"]
   currentTitre :string = this.allTitre[this.currentLevel]
-  allCorrectResponses :number[][] = [[2,3,4,6,7,8,10,11,12], [5,6,7,10,12], [5,6,7,9,11]]
+  allCorrectResponses :any[][] = [[2,3,4,6,7,8,10,11,12], [5,6,7,10,12], [5,6,7,9,11], [41], ["DISSECTED"]]
   correctResponses :number[] = this.allCorrectResponses[this.currentLevel]
 
-  constructor(private captchaStateService: CaptchaStateService) {
+  constructor(private captchaStateService: CaptchaStateService, private router: Router) {
   }
 
   ngOnInit():void {
@@ -42,6 +43,7 @@ export class CaptchaComponent {
         this.currentTitre = this.allTitre[this.currentLevel]
       } else {
         alert("congratulation")
+        this.router.navigate(['/result'])
       }
     }
   }
