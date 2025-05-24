@@ -18,11 +18,14 @@ import {Router} from '@angular/router';
 })
 export class CaptchaComponent {
   currentLevel :number = 0
-  levelSubscription: Subscription | undefined;
+  levelSubscription: Subscription | undefined; timeSubscription: Subscription | undefined;
+  timer : any;
   allTitre: string[]= ["Emoji", "Fire", "Cat", "Solve math question and enter result below", "To continue, type the word you see in the picture"]
-  currentTitre :string = this.allTitre[this.currentLevel]
+  currentTitre :string = ""
   allCorrectResponses :any[][] = [[2,3,4,6,7,8,10,11,12], [5,6,7,10,12], [5,6,7,9,11], [41], ["DISSECTED"]]
-  correctResponses :number[] = this.allCorrectResponses[this.currentLevel]
+  correctResponses :number[] = []
+  widthBar:number = 0
+  compteur:number = 0
 
   constructor(private captchaStateService: CaptchaStateService, private router: Router) {
   }
@@ -32,7 +35,12 @@ export class CaptchaComponent {
       this.currentLevel = level
       this.currentTitre = this.allTitre[level]
       this.correctResponses = this.allCorrectResponses[level]
+      this.widthBar = (level/this.allTitre.length)*100
     })
+    this.timeSubscription = this.captchaStateService.getTimeSource().subscribe(t => {
+      this.compteur = t
+    })
+     this.timer = this.captchaStateService.timer()
   }
 
   nextLevel(isSuccess: boolean) {
@@ -42,8 +50,13 @@ export class CaptchaComponent {
         this.correctResponses = this.allCorrectResponses[this.currentLevel]
         this.currentTitre = this.allTitre[this.currentLevel]
       } else {
-        alert("congratulation")
+        this.captchaStateService.changeLevel(0)
+        clearInterval(this.timer)
+
         this.router.navigate(['/result'])
+        alert("Score de : " +
+          this.compteur)
+        this.captchaStateService.resetTimer() // Apres avoir reset le timer le score revient a 0 aussi parce qu'il y ait connecte
       }
     }
   }
@@ -62,6 +75,9 @@ export class CaptchaComponent {
   ngDestroy(): void {
     if (this.levelSubscription) {
       this.levelSubscription.unsubscribe();
+    }
+    if (this.timeSubscription) {
+      this.timeSubscription.unsubscribe()
     }
   }
 

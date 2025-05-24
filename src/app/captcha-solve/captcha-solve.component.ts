@@ -5,7 +5,6 @@ import {FormsModule} from '@angular/forms';
 @Component({
   selector: 'app-captcha-solve',
   imports: [
-    NgForOf,
     FormsModule,
     NgClass,
     NgOptimizedImage

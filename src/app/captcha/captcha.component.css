@@ -1,0 +1,30 @@
+#captcha-page {
+  height: 100vh;
+}
+
+.progress-bar-container {
+  width: 70%; /* Largeur de la barre */
+  height: 20px; /* Hauteur de la barre */
+  background-color: #e0e0e0; /* Couleur de fond de la barre */
+  border-radius: 10px; /* Bords arrondis */
+  overflow: hidden; /* Cache ce qui dépasse */
+  margin: 10px auto 100px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0; /* Commence à 0% */
+  background-color: #0099ff; /* Couleur de la progression */
+  border-radius: 10px; /* Bords arrondis */
+  transition: width 0.5s ease-in-out; /* Animation douce lors du changement de largeur */
+}
+
+#compteur {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+}
+
+

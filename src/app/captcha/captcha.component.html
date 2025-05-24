@@ -1,22 +1,35 @@
+<div id="captcha-page">
 
+  <div class="progress-bar-container">
+    <div class="progress-bar-fill" [style.width.%]="widthBar" ></div>
+  </div>
 
-<app-captcha-level
-  *ngIf="currentLevel<3; else bonusLevel"
-  [level]="currentLevel"
-  [titre]="currentTitre"
-  [correctResponses]="correctResponses"
-  (isSuccess) = "nextLevel($event)"
-  (isBack) = "backLevel($event)"
->
+  <div>
 
-</app-captcha-level>
+  </div>
 
-<ng-template #bonusLevel>
-  <app-captcha-solve
+  <app-captcha-level
+    *ngIf="currentLevel<3; else bonusLevel"
     [level]="currentLevel"
-    [correctResponse]="correctResponses"
     [titre]="currentTitre"
-    (isBack)="backLevel($event)"
-    (isNext)="nextLevel($event)"
-  ></app-captcha-solve>
-</ng-template>
+    [correctResponses]="correctResponses"
+    (isSuccess) = "nextLevel($event)"
+    (isBack) = "backLevel($event)"
+  >
+
+  </app-captcha-level>
+
+  <ng-template #bonusLevel>
+    <app-captcha-solve
+      [level]="currentLevel"
+      [correctResponse]="correctResponses"
+      [titre]="currentTitre"
+      (isBack)="backLevel($event)"
+      (isNext)="nextLevel($event)"
+    ></app-captcha-solve>
+  </ng-template>
+
+  <div id="compteur">
+    {{compteur}}
+  </div>
+</div>

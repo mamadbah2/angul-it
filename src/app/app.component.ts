@@ -7,7 +7,7 @@ import {CaptchaSolveComponent} from './captcha-solve/captcha-solve.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CaptchaSolveComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

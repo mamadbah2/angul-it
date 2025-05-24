@@ -1,0 +1,142 @@
+/* Variables CSS (équivalent aux variables SCSS) */
+:root {
+  --primary-color: #0099ff; /* Rouge/Rose pour les boutons */
+  --text-color: #e0e0e0;
+  --text-color-darker: #a0a0a0;
+  --title-font: 'Cinzel Decorative', serif;
+  --body-font: 'Montserrat', sans-serif;
+  --dark-bg-panel: rgba(25, 28, 46, 0.85); /* Fond pour la boîte de contenu */
+  --light-glow: rgba(200, 200, 255, 0.3);
+}
+
+.results-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-content-box {
+  background-color: var(--dark-bg-panel);
+  padding: 40px 60px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 500px;
+  width: 90%;
+  animation: fadeInScaleUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fadeInScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.results-title {
+  font-family: var(--title-font);
+  font-size: 2.8em; /* Ajusté pour un titre de fin de jeu */
+  font-weight: 700;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px var(--light-glow);
+}
+
+.score-display {
+  margin-bottom: 30px;
+}
+
+.score-label {
+  font-size: 1.3em;
+  color: var(--text-color-darker);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.score-value {
+  font-family: var(--title-font); /* Utiliser la police titre pour le score le rend plus impactant */
+  font-size: 4.5em;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 0 0 8px var(--light-glow), 0 0 15px var(--primary-color); /* Léger halo de la couleur primaire */
+}
+
+.decorative-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  width: 70%;
+}
+
+.decorative-separator .deco-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--text-color-darker);
+  opacity: 0.7;
+}
+
+.decorative-separator .deco-diamond {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border: 1px solid var(--text-color-darker);
+  transform: rotate(45deg);
+  margin: 0 15px;
+  opacity: 0.7;
+}
+
+.retry-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  font-family: var(--body-font);
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.retry-button:hover {
+  background-color: #0099ff; /* Un peu plus foncé au survol */
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.retry-button:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Quelques ajustements pour les petits écrans */
+@media (max-width: 600px) {
+  .results-content-box {
+    padding: 30px 20px;
+  }
+  .results-title {
+    font-size: 2.2em;
+  }
+  .score-value {
+    font-size: 3.5em;
+  }
+  .retry-button {
+    padding: 12px 30px;
+    font-size: 1.1em;
+  }
+}

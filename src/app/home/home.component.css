@@ -10,7 +10,7 @@
 .home-container {
   width: 100vw;
   height: 100vh;
-  background-image: url('../../../public/beachgame.jpg'); /* Chemin vers votre image */
+  background-image: url('../../../public/landgame.jpg'); /* Chemin vers votre image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -83,20 +83,6 @@
   border-radius: 20px;
   font-size: 0.9em;
   cursor: pointer;
-}
-
-.main-header .buy-now-header {
-  background-color: #d9534f; /* $primary-color */
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 20px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.main-header .buy-now-header:hover {
-  background-color: #c9302c; /* darken($primary-color, 10%) approx */
 }
 
 .hero-section {
@@ -173,14 +159,13 @@
 }
 
 .hero-section .cta-buttons .cta-primary {
-  background-color: #d9534f; /* $primary-color */
+  background-color: #0099ff; /* $primary-color */
   color: white;
   /* box-shadow: 0 5px 15px rgba(darken($primary-color, 10%), 0.4); */
   /* Calculated: #c9302c (R:201, G:48, B:44) */
-  box-shadow: 0 5px 15px rgba(201, 48, 44, 0.4);
+  box-shadow: 0 5px 15px rgba(44, 48, 201, 0.4);
 }
 .hero-section .cta-buttons .cta-primary:hover {
-  background-color: #c9302c; /* darken($primary-color, 10%) approx */
   transform: translateY(-2px);
 }
 
