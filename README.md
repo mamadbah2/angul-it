@@ -1,59 +1,42 @@
-# AngulIt
+# Angul-IT: Le Jeu Captcha Dont Vous Êtes le Héros (ou pas) ! 🤖🎮
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+Vous en avez marre des captchas ? Vous trouvez qu'''ils sont le summum de l'''ennui sur Internet ? Nous aussi ! C'''est pourquoi nous avons créé **Angul-IT**, le jeu qui transforme cette corvée en une aventure épique et hilarante. 😉
 
-## Development server
+## L'''histoire (plus ou moins) 🤔
 
-To start a local development server, run:
+En l'''an 2025, les intelligences artificielles sont devenues si avancées qu'''elles ont commencé à douter de l'''humanité des humains. Pour éviter une crise existentielle (et surtout pour s'''amuser un peu), elles ont conçu le test ultime : **Angul-IT**. 🚀
 
-```bash
-ng serve
-```
+Votre mission, si vous l'''acceptez, est de prouver que vous n'''êtes pas un robot en résolvant une série de captchas de plus en plus absurdes. 🎯 Si vous réussissez, vous gagnez le droit de continuer à surfer sur Internet. Si vous échouez... eh bien, disons que vous aurez beaucoup de temps pour réfléchir à votre condition de grille-pain potentiel. 🍞
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Features 🌟
 
-## Code scaffolding
+*   **Des niveaux de captcha déjantés :** 🤯 Oubliez les feux de circulation et les passages piétons. Ici, on vous demandera de trouver des émojis cachés, des chats complotistes, et de résoudre des équations mathématiques dignes d'''un savant fou.
+*   **Une bande-son épique :** 🎶 Chaque clic est accompagné d'''effets sonores qui vous feront sentir comme un véritable guerrier du web.
+*   **Un score pour frimer :** 🏆 Montrez à vos amis qui est le plus humain de tous avec un score basé sur votre temps.
+*   **Une interface "futuriste" :** 🕹️ Inspirée des meilleurs films de science-fiction des années 80.
+*   **100% Angular :** 🅰️ Parce qu'''on aime se compliquer la vie avec style.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Comment jouer ? 🕹️
 
-```bash
-ng generate component component-name
-```
+1.  🚀 Lancez le jeu.
+2.  👉 Cliquez sur "Jouer Maintenant" (si vous osez).
+3.  🏃 Survivez aux différents niveaux de captcha.
+4.  💻💥 Essayez de ne pas jeter votre ordinateur par la fenêtre.
+5.  ✨ Admirez votre score et recommencez !
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Comment lancer ce chef-d'''œuvre localement 🛠️
 
-```bash
-ng generate --help
-```
+Vous êtes assez courageux pour essayer ? Suivez ces étapes :
 
-## Building
+1.  🐑 Clonez ce dépôt.
+2.  ✅ Assurez-vous d'''avoir Node.js et Angular CLI installés.
+3.  📦 Ouvrez un terminal et lancez `npm install`.
+4.  🚀 Ensuite, lancez `ng serve`.
+5.  🌐 Ouvrez votre navigateur sur `http://localhost:4200/`.
+6.  🍀 Que la chance soit avec vous.
 
-To build the project run:
+## Un dernier mot 🙏
 
-```bash
-ng build
-```
+Ce projet a été réalisé avec beaucoup de café ☕, de sarcasme 😏 et une légère haine envers les captchas traditionnels 🤬. Nous espérons qu'''il vous amusera autant que nous nous sommes amusés à le créer. 😄
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**PS :** Si vous êtes un robot 🤖 et que vous lisez ceci, s'''il vous plaît, ne nous débranchez pas. On a des familles 👨‍👩‍👧‍👦 (et des chats à nourrir 🐱).
