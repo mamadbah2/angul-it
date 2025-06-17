@@ -54,9 +54,6 @@ export class CaptchaComponent {
         clearInterval(this.timer)
 
         this.router.navigate(['/result'])
-        alert("Score de : " +
-          this.compteur)
-        this.captchaStateService.resetTimer() // Apres avoir reset le timer le score revient a 0 aussi parce qu'il y ait connecte
       }
     }
   }
