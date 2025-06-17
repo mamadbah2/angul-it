@@ -11,6 +11,7 @@
   <app-captcha-level
     *ngIf="currentLevel<3; else bonusLevel"
     [level]="currentLevel"
+    [sublevel]="globalSubLevel"
     [titre]="currentTitre"
     [correctResponses]="correctResponses"
     (isSuccess) = "nextLevel($event)"
@@ -22,6 +23,7 @@
   <ng-template #bonusLevel>
     <app-captcha-solve
       [level]="currentLevel"
+      [sublevel]="globalSubLevel"
       [correctResponse]="correctResponses"
       [titre]="currentTitre"
       (isBack)="backLevel($event)"

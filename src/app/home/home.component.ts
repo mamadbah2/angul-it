@@ -18,5 +18,21 @@ export class HomeComponent {
 
   ngOnInit() {
     this.captchaStateService.resetTimer() // On reset le timer apres le resultat
+    this.playSound();
+  }
+
+  playSound() {
+    const audio = new Audio();
+    audio.src="./sound/gamesound.mp3";
+    audio.load();
+    audio.loop = true;
+    audio.play();
+  }
+
+  playSoundButton() {
+    const audio = new Audio();
+    audio.src="./sound/clic.mp3";
+    audio.load();
+    audio.play();
   }
 }

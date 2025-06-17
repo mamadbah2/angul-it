@@ -18,6 +18,6 @@ export class ResultComponent {
 
   ngOnInit():void {
     this.score = this.captchaStateService.getTimeSource().getValue()
-
+    this.captchaStateService.changeLevel(0)
   }
 }

@@ -23,6 +23,9 @@ export class CaptchaLevelComponent {
   level = 0
 
   @Input()
+  sublevel = 0
+
+  @Input()
   titre = ""
 
   @Input()
@@ -35,6 +38,7 @@ export class CaptchaLevelComponent {
   isBack = new EventEmitter<boolean>();
 
   toggleSelection(id:number) {
+    this.playSoundButton()
     let i = this.image.find(i => i.numero == id);
     if (i) i.isSelected = !i.isSelected;
     if (this.checkCorrectResponses()) {
@@ -66,6 +70,13 @@ export class CaptchaLevelComponent {
   goBack() {
     this.image.map(i => i.isSelected = false);
     this.isBack.emit(true)
+  }
+
+  playSoundButton() {
+    const audio = new Audio();
+    audio.src="./sound/choice.mp3";
+    audio.load();
+    audio.play();
   }
 
 }

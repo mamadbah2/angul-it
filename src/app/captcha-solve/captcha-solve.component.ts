@@ -17,6 +17,9 @@ export class CaptchaSolveComponent {
   level:number = 0;
 
   @Input()
+  sublevel=0;
+
+  @Input()
   correctResponse:any[] = [];
 
   response:string = "";
@@ -36,6 +39,7 @@ export class CaptchaSolveComponent {
   }
 
   checkCorrectResponse() {
+    this.playSoundButton()
     // let value = parseInt(this.response, 10)
     if (this.response == this.correctResponse[0]) this.isNext.emit(true)
     else {
@@ -43,5 +47,12 @@ export class CaptchaSolveComponent {
       setTimeout(()=> this.isResponseFailed = false, 2000);
     }
     this.response = ""
+  }
+
+  playSoundButton() {
+    const audio = new Audio();
+    audio.src="./sound/choice.mp3";
+    audio.load();
+    audio.play();
   }
 }

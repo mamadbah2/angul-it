@@ -4,13 +4,14 @@ import {CaptchaComponent} from './captcha/captcha.component';
 import {ResultComponent} from './result/result.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {NgModule} from '@angular/core';
+import {captchaGuard} from './captcha.guard';
 
 export const routes: Routes = [
   {path:"home", component: HomeComponent},
   {path:"captcha", component: CaptchaComponent},
-  {path:"result", component: ResultComponent},
-  {path:"", redirectTo:"home", pathMatch:"full"},
-  {path:"**", component: PageNotFoundComponent}
+  {path:"result", component: ResultComponent, canActivate: [captchaGuard]},
+  {path:"**", redirectTo:"home", pathMatch:"full"},
+  //{path:"**", component: PageNotFoundComponent}
 ];
 
 @NgModule({

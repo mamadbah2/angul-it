@@ -12,7 +12,7 @@
         class="img{{i.numero}}"
         (click)="toggleSelection(i.numero)"
       >
-        <img ngSrc="./level-{{level}}/img{{i.numero}}.jpg" width="120" height="120" priority alt="captcha image">
+        <img ngSrc="./level-{{level}}-{{sublevel}}/img{{i.numero}}.{{sublevel==1 ? 'jpeg' : 'jpg' }}" width="120" height="120" priority alt="captcha image">
       </div>
     </section>
     <section id="card-footer">
