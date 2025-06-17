@@ -8,7 +8,7 @@
     <section id="card-body">
       <div
         *ngFor="let i of image"
-        [ngClass]="{ 'selected' : i.isSelected }"
+        [ngClass]="{ 'selected' : i.isSelected, 'anime': isAnimated }"
         class="img{{i.numero}}"
         (click)="toggleSelection(i.numero)"
       >

@@ -89,7 +89,20 @@ main > div {
   object-fit: cover;
 }
 
+.anime {
+  animation: img-animation linear 1s;
+}
+
 #card-body .selected {
   box-sizing: border-box;
   border: 5px solid #0099ff;
+}
+
+@keyframes img-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

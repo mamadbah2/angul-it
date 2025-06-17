@@ -37,11 +37,17 @@ export class CaptchaLevelComponent {
   @Output()
   isBack = new EventEmitter<boolean>();
 
+  isAnimated = false
+
+
   toggleSelection(id:number) {
     this.playSoundButton()
     let i = this.image.find(i => i.numero == id);
     if (i) i.isSelected = !i.isSelected;
     if (this.checkCorrectResponses()) {
+      // Do an animation
+      this.isAnimated = true
+      setTimeout(()=>this.isAnimated=false, 1000)
       this.image.map(i => i.isSelected = false);
       this.isSuccess.emit(true);
     }

@@ -9,6 +9,7 @@ main > div {
   width: fit-content;
   font-family: sans-serif;
   background-color: white;
+  animation: img-animation 1s ease-in-out;
 }
 
 #card-body div {
@@ -106,4 +107,12 @@ main > div {
   border: 5px solid #0099ff;
 }
 
+@keyframes img-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
