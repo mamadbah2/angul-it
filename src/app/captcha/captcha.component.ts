@@ -46,8 +46,9 @@ export class CaptchaComponent {
   ngOnInit():void {
     this.levelSubscription = this.captchaStateService.currentLevel.subscribe(level => {
       this.currentLevel = level
-      this.currentTitre = this.allTitre[level]
-      this.correctResponses = this.allCorrectResponses[level+(this.globalSubLevel*this.totalLevel)]
+      let i = level+(this.globalSubLevel*this.totalLevel)
+      this.currentTitre = this.allTitre[i]
+      this.correctResponses = this.allCorrectResponses[i]
       this.widthBar = (level/5)*100
     })
     this.timeSubscription = this.captchaStateService.getTimeSource().subscribe(t => {
